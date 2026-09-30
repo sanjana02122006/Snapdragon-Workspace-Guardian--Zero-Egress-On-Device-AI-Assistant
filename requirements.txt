@@ -1,0 +1,64 @@
+# Snapdragon Local Workspace & Privacy Assistant
+# Requirements
+# ============
+# Install with: pip install -r requirements.txt
+#
+# Hardware target: Snapdragon X Elite / X Plus / X2 Elite (Windows ARM64)
+# Runtime:  ONNX Runtime >= 1.19 with QNN Execution Provider
+# Python:   3.11+
+
+# ── Core UI ────────────────────────────────────────────────────────────────
+PyQt6>=6.6.0
+PyQt6-Qt6>=6.6.0
+PyQt6-sip>=13.6.0
+
+# ── ONNX Runtime with QNN (Qualcomm Neural Network) EP ─────────────────────
+# For Snapdragon X-series: install the onnxruntime-qnn wheel from Qualcomm
+# https://www.qualcomm.com/developer/software/neural-processing-sdk-for-ai
+# pip install onnxruntime-qnn  (Windows ARM64 wheel)
+onnxruntime>=1.19.0
+
+# ── Computer Vision ─────────────────────────────────────────────────────────
+opencv-python>=4.9.0
+Pillow>=10.0.0
+
+# ── Audio I/O ────────────────────────────────────────────────────────────────
+sounddevice>=0.4.7
+soundfile>=0.12.1
+
+# ── Speech-To-Text preprocessing ─────────────────────────────────────────────
+librosa>=0.10.2
+numpy>=1.26.0
+
+# ── OCR ──────────────────────────────────────────────────────────────────────
+pytesseract>=0.3.10
+# Tesseract binary: https://github.com/UB-Mannheim/tesseract/wiki
+
+# ── LLM / Tokenizer ──────────────────────────────────────────────────────────
+transformers>=4.42.0
+tokenizers>=0.19.0
+
+# ── RAG / Vector Store ────────────────────────────────────────────────────────
+chromadb>=0.5.0
+PyMuPDF>=1.24.0           # PDF parsing (fitz)
+
+# ── Text-To-Speech (offline CoquiTTS) ────────────────────────────────────────
+# TTS>=0.22.0             # Uncomment when GPU/CPU TTS desired
+# Note: CoquiTTS is heavy (~2GB). Uncomment only if TTS feature is needed.
+
+# ── Qualcomm AI Hub SDK ───────────────────────────────────────────────────────
+# qai-hub>=0.17.0         # Uncomment to use model downloader with AI Hub API
+# qai-hub-models>=0.9.0   # Uncomment for model zoo access
+
+# ── System monitoring ────────────────────────────────────────────────────────
+psutil>=5.9.8
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+scipy>=1.13.0
+tqdm>=4.66.0
+requests>=2.32.0
+
+# ── Dev / Testing ─────────────────────────────────────────────────────────────
+pytest>=8.0.0
+pytest-qt>=4.3.0
+pytest-cov>=5.0.0
